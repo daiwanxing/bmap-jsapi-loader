@@ -1,6 +1,6 @@
 {
   "name": "bmap-loader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "一个易用的安装百度地图的js加载器, 灵感来源于高德地图官方的amap-jsapi-loader",
   "main": "./dist/bundle.es.js",
   "type": "module",
@@ -12,6 +12,7 @@
     "bmap-loader",
     "sdk"
   ],
+  "files": ["dist"],
   "author": "Wonder Dai",
   "license": "MIT",
   "bugs": {
