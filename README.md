@@ -46,6 +46,12 @@ BMapLoader({
     v: "1.0",
     type: "webgl",
     ak: "填写你的ak密钥",
+    // 加载百度地图的工具库
+    library: [
+      {
+        lib: "DrawingManager"
+       }
+    ]
   }).then((BMapGL) => {
     const map = new BMapGL.Map("map");
     map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11);
@@ -61,8 +67,8 @@ BMapLoader({
 
 ## RoadMap
 
-- [ ] 改用 typescript 重写，增强智能提示。
-- [ ] 支持加载百度地图的插件库。
+- [x] 改用 typescript 重写，增强智能提示。
+- [x] 支持加载百度地图的插件库。
 
 # License
 
