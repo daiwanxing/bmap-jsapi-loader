@@ -65,6 +65,24 @@ BMapLoader({
 </script>
 ```
 
+## 安装百度地图js工具库
+
+### 百度地图GL版本的工具库是不需要指定库的version，但是3.0以及3.0以下的版本安装库的时候需要指定库的版本.
+
+```js
+  BMapLoader({
+    v: "3.0",
+    ak: "填写你的ak密钥",
+    // 加载百度地图的工具库
+    library: [
+      {
+        lib: "DrawingManager",
+        version: "1.5"
+       }
+    ]
+  })
+```
+
 ## RoadMap
 
 - [x] 改用 typescript 重写，增强智能提示。
