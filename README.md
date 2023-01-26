@@ -1,6 +1,6 @@
 # BMap-loader
 
-BMap-loader 是一个非官方的地图 jsAPI 加载器, 目标是为用户提供一个简洁易用的创建百度地图的插件。 BMap-loader 的灵感来源于 [amap-jsapi-loader](https://www.npmjs.com/package/@amap/amap-jsapi-loader), 但目前仍有部分功能待实现中， 如果您愿意贡献代码，欢迎提 PR。
+BMap-loader 是一个非官方的地图 jsAPI 加载器, 目标是为用户提供一个简洁易用的创建百度地图的插件。 BMap-loader 的灵感来源于 [amap-jsapi-loader](https://www.npmjs.com/package/@amap/amap-jsapi-loader), 如果您在使用中遇到了问题，欢迎提交 PR 或者 issues。
 
 BMap-loader 特性如下：
 
