@@ -1,18 +1,24 @@
 # BMap-loader
 
-BMap-loader 是一个非官方的地图 jsAPI 加载器, 目标是为用户提供一个简洁易用的创建百度地图的插件。 BMap-loader 的灵感来源于 [amap-jsapi-loader](https://www.npmjs.com/package/@amap/amap-jsapi-loader), 如果您在使用中遇到了问题，欢迎提交 PR 或者 issues。
+BMap-loader 是一个百度地图 jsAPI 加载器, 旨为用户提供一个简洁易用的创建百度地图的库。 BMap-loader 的灵感来源于 [amap-jsapi-loader](https://www.npmjs.com/package/@amap/amap-jsapi-loader)。
 
-BMap-loader 特性如下：
+### 特点
 
-- 支持以 UMD 和 ESM 两种方式使用；
-- 以异步加载的方式加载百度地图;
-- 支持加载 JSAPI JSAPI-GL 两个地图版本；
-- 支持多次加载插件；
-- 对于加载地图的错误用法给予报错处理；
+ 🎨 支持以 UMD 和 ESM 两种模块方式使用。
+  
+ 🛠️ 完整的 typescript 类型支持。
+ 
+ ⚡ 以异步加载的方式加载百度地图脚本
+ 
+ 🌱 支持加载 JSAPI / JSAPI-GL 两个版本。
+  
+ 📃 同时支持加载百度地图工具库。
+ 
+ 🔑 友好的加载错误提示。
 
-# 使用方式
+# 用法
 
-## 以 npm 方式引用
+## 以 npm 方式使用
 
 ```shell
 $ npm install bmap-loader --save
@@ -38,7 +44,7 @@ BMapLoader({
 });
 ```
 
-## 以 js 脚本的方式引用
+## 以脚本引用外链使用
 
 ```html
 <script src="../dist/umd.js"></script>
