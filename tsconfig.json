@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "strict": true,
+        "skipLibCheck": true,
+        "allowJs": false,
+        "baseUrl": ".",
+        "noImplicitAny": true,
+        "moduleResolution": "Node",
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+    },
+    "include": ["src/**/*", "typings/types.d.ts", "typings/types.d.ts"],
+    "exclude": [
+        "node_modules"
+    ]
+}

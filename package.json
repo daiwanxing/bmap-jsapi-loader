@@ -1,8 +1,9 @@
 {
   "name": "bmap-loader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "一个易用的安装百度地图的js加载器, 灵感来源于高德地图官方的amap-jsapi-loader",
-  "main": "./dist/bundle.es.js",
+  "main": "./dist/index.js",
+  "types": "./typings/types.d.ts",
   "type": "module",
   "scripts": {
     "build": "rollup -c rollup.config.js"
@@ -10,9 +11,13 @@
   "keywords": [
     "bmap",
     "bmap-loader",
-    "sdk"
+    "sdk",
+    "百度地图",
+    "百度地图jsapi"
   ],
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "author": "Wonder Dai",
   "license": "MIT",
   "bugs": {
@@ -25,8 +30,11 @@
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "core-js": "^3.27.2",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@types/node": "^18.11.18",
     "rollup": "^3.10.1",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4"
   }
 }

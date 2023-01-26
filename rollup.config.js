@@ -1,28 +1,34 @@
 import { defineConfig } from "rollup";
-import { terser } from "rollup-plugin-terser";
 import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
 import babel from "@rollup/plugin-babel";
-import commonjs from '@rollup/plugin-commonjs';
+import typescript from "@rollup/plugin-typescript";
 
 export default defineConfig({
-  input: "./index.js",
+  input: "./src/index.ts",
   output: [
     {
-      file: "dist/bmap-loader.es.js",
-      format: "es",
-      compact: true,
-    },
-    {
-      file: "dist/bmap-loader.umd.js",
+      file: "dist/umd.js",
       format: "umd",
       name: "BMapLoader",
       compact: true,
     },
-  ],
+    {
+      file: "dist/index.js",
+      format: "es",
+      compact: true,
+    },
+],
   plugins: [
+    typescript({
+        tsconfig: "./tsconfig.json"
+    }),
     resolve(),
     commonjs(),
-    babel({ babelHelpers: "bundled" }),
-    terser()
+    babel({
+      babelHelpers: "bundled",
+      exclude: "node_modules/**",
+      extensions: [".js", ".ts"],
+    }),
   ],
 });
