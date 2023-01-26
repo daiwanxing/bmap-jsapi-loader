@@ -12,8 +12,9 @@
             "ESNext",
             "DOM"
         ],
+        "typeRoots": ["src/types"]
     },
-    "include": ["src/**/*", "typings/types.d.ts", "typings/types.d.ts"],
+    "include": ["src/**/*", "src/types/index.d.ts"],
     "exclude": [
         "node_modules"
     ]

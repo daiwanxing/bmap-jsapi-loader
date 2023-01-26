@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "description": "一个易用的安装百度地图的js加载器, 灵感来源于高德地图官方的amap-jsapi-loader",
   "main": "./dist/index.js",
-  "types": "./typings/types.d.ts",
+  "types": "./src/types/index.d.ts",
   "type": "module",
   "scripts": {
     "build": "rollup -c rollup.config.js"
@@ -16,7 +16,8 @@
     "百度地图jsapi"
   ],
   "files": [
-    "dist"
+    "dist",
+    "*.d.ts"
   ],
   "author": "Wonder Dai",
   "license": "MIT",

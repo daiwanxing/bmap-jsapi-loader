@@ -6,7 +6,7 @@ let BMAP_STATE = LOAD_STATE.NOT_LOAD;
 
 const BMAP_GL = "webgl";
 
-async function loader(params: BMapLoader.LoaderParams) {
+async function loader(params: BMapJSAPI.LoadParams) {
   const { ak, v, type, library } = params;
   if (!ak) return Promise.reject("please provide map ak");
   if (typeof ak !== "string") return Promise.reject(`illegal ak value: ${ak}`);
@@ -63,7 +63,7 @@ async function loader(params: BMapLoader.LoaderParams) {
   });
 }
 
-function addBMapLibrary(libs: BMapLoader.LoaderParams["library"]) {
+function addBMapLibrary(libs: BMapJSAPI.LoadParams["library"]) {
   const awaitJobs = libs.map((data) => {
     const { lib, version } = data;
     const libData = BMapLib.get(lib);
@@ -110,7 +110,7 @@ function addBMapLibrary(libs: BMapLoader.LoaderParams["library"]) {
 // GL版的开源工具库放到了百度云的BOS存储上, 参见右侧链接 https://github.com/huiyan-fe/BMapGLLib
 const BMapGLLibURL = "https://mapopen.bj.bcebos.com/github/BMapGLLib";
 
-function addBMapGLLibrary(libs: BMapLoader.LoaderParams["library"]) {
+function addBMapGLLibrary(libs: BMapJSAPI.LoadParams["library"]) {
   // 对于已经安装了的lib，可以直接resolve
   const awaitJobs = libs.map((data) => {
     const { lib } = data;
