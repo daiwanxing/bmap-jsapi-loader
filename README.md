@@ -40,7 +40,7 @@ BMapLoader({
 ## 以 js 脚本的方式引用
 
 ```html
-<script src="../dist/bmap-loader.umd.js"></script>
+<script src="../dist/umd.js"></script>
 <script>
   BMapLoader({
     v: "1.0",
