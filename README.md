@@ -25,7 +25,8 @@ BMapLoader({
   v: "1.0",
   type: "webgl",
   ak: "填写你的ak密钥",
-}).then((BMapGL) => {
+}).then(() => {
+  // window.BMapGL
   const map = new BMapGL.Map("map");
   map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11);
   map.addControl(
@@ -52,7 +53,7 @@ BMapLoader({
         lib: "DrawingManager"
        }
     ]
-  }).then((BMapGL) => {
+  }).then(() => {
     const map = new BMapGL.Map("map");
     map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11);
     map.addControl(
