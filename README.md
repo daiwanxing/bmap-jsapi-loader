@@ -1,6 +1,6 @@
 # BMap-loader
 
-BMap-loader 是一个非官方的地图 jsAPI 加载器, 目标是为用户提供一个简洁易用的创建百度地图的插件。 BMap-loader 的灵感来源于 [amap-jsapi-loader](https://www.npmjs.com/package/@amap/amap-jsapi-loader), 但目前仍有部分功能待实现中， 如果您愿意贡献代码，欢迎提 PR。
+BMap-loader 是一个非官方的地图 jsAPI 加载器, 目标是为用户提供一个简洁易用的创建百度地图的插件。 BMap-loader 的灵感来源于 [amap-jsapi-loader](https://www.npmjs.com/package/@amap/amap-jsapi-loader), 如果您在使用中遇到了问题，欢迎提交 PR 或者 issues。
 
 BMap-loader 特性如下：
 
@@ -25,7 +25,8 @@ BMapLoader({
   v: "1.0",
   type: "webgl",
   ak: "填写你的ak密钥",
-}).then((BMapGL) => {
+}).then(() => {
+  // window.BMapGL
   const map = new BMapGL.Map("map");
   map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11);
   map.addControl(
@@ -40,7 +41,7 @@ BMapLoader({
 ## 以 js 脚本的方式引用
 
 ```html
-<script src="../dist/bmap-loader.umd.js"></script>
+<script src="../dist/umd.js"></script>
 <script>
   BMapLoader({
     v: "1.0",
@@ -52,7 +53,7 @@ BMapLoader({
         lib: "DrawingManager"
        }
     ]
-  }).then((BMapGL) => {
+  }).then(() => {
     const map = new BMapGL.Map("map");
     map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11);
     map.addControl(
