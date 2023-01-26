@@ -1,6 +1,6 @@
 # BMap-loader
 
-BMap-loader 是一个百度地图 JS-API 加载器, 旨为用户提供一个简洁易用的创建百度地图的库。 BMap-loader 的灵感来源于 [amap-jsapi-loader](https://www.npmjs.com/package/@amap/amap-jsapi-loader)。
+`BMap-loader` 是一个百度地图 JS-API 加载器, 旨为用户提供一个简洁易用的创建百度地图的库。 `BMap-loader` 的灵感来源于 [amap-jsapi-loader](https://www.npmjs.com/package/@amap/amap-jsapi-loader)。
 
 ### 特点
 
@@ -72,9 +72,11 @@ BMapLoader({
 </script>
 ```
 
-## 安装百度地图 js 工具库
+## 安装百度地图工具库
 
 ### 百度地图 GL 版本的工具库是不需要指定库的 version，但是3.0以及3.0以下的版本安装库的时候需要指定库的版本.
+
+> 点击链接可以查看 3.0 及以下版本的工具库的版本列表 [工具库](https://lbsyun.baidu.com/index.php?title=jspopular3.0/openlibrary)
 
 ```js
   BMapLoader({
@@ -85,10 +87,16 @@ BMapLoader({
       {
         lib: "DrawingManager",
         version: "1.5"
+       },
+       {
+        lib: "MarkerClusterer",
+        version: "1.2"
        }
     ]
   })
 ```
+
+### 如果在使用过程中遇到任何问题，请提交 issue，谢谢。
 
 # License
 
