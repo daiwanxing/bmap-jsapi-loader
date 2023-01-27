@@ -12,7 +12,7 @@
  
  🌱 支持加载 JSAPI / JSAPI-GL 两个版本。
   
- 📃 同时支持加载百度地图工具库。
+ 📃 支持加载百度地图开源库。
  
  🔑 友好的加载错误提示。
 
@@ -44,7 +44,7 @@ BMapLoader({
 });
 ```
 
-## 以脚本引用外链使用
+## 以普通脚本引用外链使用
 
 ```html
 <script src="../dist/umd.js"></script>
@@ -74,9 +74,11 @@ BMapLoader({
 
 ## 安装百度地图工具库
 
-### 百度地图 GL 版本的工具库是不需要指定库的 version，但是3.0以及3.0以下的版本安装库的时候需要指定库的版本.
+### 百度地图 GL 版本的开源库是不需要指定库的 version，但是3.0及以下百度地图版本在使用开源库时需要指定库的版本.
 
-> 点击链接可以查看 3.0 及以下版本的工具库的版本列表 [工具库](https://lbsyun.baidu.com/index.php?title=jspopular3.0/openlibrary)
+> [点击链接](https://lbsyun.baidu.com/index.php?title=jspopular3.0/openlibrary)查看 3.0 及以下版本的工具库的版本列表
+
+> [点击链接](https://github.com/huiyan-fe/BMapGLLib)查看GL版本的可用开源库
 
 ```js
   BMapLoader({
@@ -96,7 +98,7 @@ BMapLoader({
   })
 ```
 
-### 如果在使用过程中遇到任何问题，请提交 issue，谢谢。
+### 如果你在使用过程中遇到任何问题，请提交 issue，谢谢。
 
 # License
 
