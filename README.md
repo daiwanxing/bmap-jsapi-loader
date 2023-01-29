@@ -112,6 +112,8 @@ BMapLoader({
 });
 ```
 
+## 👉 [在线 DEMO](https://codesandbox.io/s/sad-firefly-nvbl4c?file=/src/App.vue)
+
 ## 🐛 提交 issue
 
 提交 issue 前，请尽可能的能提供一个可复现的 demo 放在 issue 中。
