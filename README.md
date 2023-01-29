@@ -3,8 +3,8 @@
 ![GitHub](https://img.shields.io/github/license/yinguobing/cnn-facial-landmark)
 ![downloads](https://img.shields.io/npm/dt/bmap-loader.svg)
 ![version](https://img.shields.io/npm/v/bmap-loader)
-
-`BMap-loader` 是一个百度地图 JS-API 加载器, 旨为用户提供一个简洁易用的创建百度地图的库。 `BMap-loader` 的灵感来源于 [amap-jsapi-loader](https://www.npmjs.com/package/@amap/amap-jsapi-loader)。
+    
+`BMap-loader` 是一个小巧的易于加载百度地图以及地图开源工具库的插件,  `BMap-loader` 的灵感来源于 [amap-jsapi-loader](https://www.npmjs.com/package/@amap/amap-jsapi-loader)。
 
 ### 特点
 
