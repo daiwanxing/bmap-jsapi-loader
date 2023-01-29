@@ -4,17 +4,17 @@
 
 ### 特点
 
- 🎨 支持以 UMD 和 ESM 两种模块方式使用。
-  
- 🛠️ 完整的 typescript 类型支持。
- 
- ⚡ 以异步加载的方式加载百度地图脚本
- 
- 🌱 支持加载 JSAPI / JSAPI-GL 两个版本。
-  
- 📃 支持加载百度地图开源库。
- 
- 🔑 友好的加载错误提示。
+🎨 支持以 UMD 和 ESM 两种模块方式使用。
+
+🛠️ 完整的 typescript 类型支持。
+
+⚡ 以异步加载的方式加载百度地图脚本
+
+🌱 支持加载 JSAPI / JSAPI-GL 两个版本。
+
+📃 支持加载百度地图开源库。
+
+🔑 友好的加载错误提示。
 
 # 用法
 
@@ -28,19 +28,19 @@ $ npm install bmap-loader --save
 import BMapLoader from "bmap-loader";
 
 BMapLoader({
-  v: "1.0",
-  type: "webgl",
-  ak: "填写你的ak密钥",
+    v: "1.0",
+    type: "webgl",
+    ak: "填写你的ak密钥",
 }).then(() => {
-  // window.BMapGL
-  const map = new BMapGL.Map("map");
-  map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11);
-  map.addControl(
-    new BMapGL.MapTypeControl({
-      mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP],
-    })
-  );
-  map.enableScrollWheelZoom(true);
+    // window.BMapGL
+    const map = new BMapGL.Map("map");
+    map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11);
+    map.addControl(
+        new BMapGL.MapTypeControl({
+            mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP],
+        })
+    );
+    map.enableScrollWheelZoom(true);
 });
 ```
 
@@ -49,58 +49,60 @@ BMapLoader({
 ```html
 <script src="../dist/umd.js"></script>
 <script>
-  BMapLoader({
-    v: "1.0",
-    type: "webgl",
-    ak: "填写你的ak密钥",
-    // 加载百度地图的工具库
-    library: [
-      {
-        lib: "DrawingManager"
-       }
-    ]
-  }).then(() => {
-    const map = new BMapGL.Map("map");
-    map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11);
-    map.addControl(
-      new BMapGL.MapTypeControl({
-        mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP],
-      })
-    );
-    map.enableScrollWheelZoom(true);
-  });
+    BMapLoader({
+        v: "1.0",
+        type: "webgl",
+        ak: "填写你的ak密钥",
+        // 加载百度地图的工具库
+        library: [
+            {
+                lib: "DrawingManager",
+            },
+        ],
+    }).then(() => {
+        const map = new BMapGL.Map("map");
+        map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11);
+        map.addControl(
+            new BMapGL.MapTypeControl({
+                mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP],
+            })
+        );
+        map.enableScrollWheelZoom(true);
+    });
 </script>
 ```
 
 ## 安装百度地图工具库
 
-### 百度地图 GL 版本的开源库是不需要指定库的 version，但是3.0及以下百度地图版本在使用开源库时需要指定库的版本.
+### 百度地图 GL 版本的开源库是不需要指定库的 version，但是 3.0 及以下百度地图版本在使用开源库时需要指定库的版本.
 
 > [点击链接](https://lbsyun.baidu.com/index.php?title=jspopular3.0/openlibrary)查看 3.0 及以下版本的工具库的版本列表
 
-> [点击链接](https://github.com/huiyan-fe/BMapGLLib)查看GL版本的可用开源库
+> [点击链接](https://github.com/huiyan-fe/BMapGLLib)查看 GL 版本的可用开源库
 
 ```js
-  BMapLoader({
+BMapLoader({
     v: "3.0",
     ak: "填写你的ak密钥",
     // 加载百度地图的工具库
     library: [
-      {
-        lib: "DrawingManager",
-        version: "1.5"
-       },
-       {
-        lib: "MarkerClusterer",
-        version: "1.2"
-       }
-    ]
-  })
+        {
+            lib: "DrawingManager",
+            version: "1.5",
+        },
+        {
+            lib: "MarkerClusterer",
+            version: "1.2",
+        },
+    ],
+});
 ```
 
-### 如果你在使用过程中遇到任何问题，请提交 issue，谢谢。
+## 🐛 提交 issue
 
-### 如果你觉得这个插件还不错，还请给我一个⭐支持下我。
+提交 issue 前，请尽可能的能提供一个可复现的 demo 放在 issue 中。
+
+**最后，如果你觉得这个插件还不错，还请给我一个 ⭐ 支持下我。**
 
 # License
 
