@@ -68,7 +68,7 @@ async function loader(params: BMapJSAPI.LoadParams) {
 
 function addBMapLibrary(libs: BMapJSAPI.LoadParams["library"]) {
     const awaitJobs = libs.map((data) => {
-        const { lib, version } = data;
+        const { lib, version, disableZip } = data;
         const libData = BMapLib.get(lib);
         if (!libData) {
             console.warn(
@@ -86,7 +86,10 @@ function addBMapLibrary(libs: BMapJSAPI.LoadParams["library"]) {
                 );
             return new Promise((resolve, rejected) => {
                 const st = document.createElement("script");
-                st.src = `${BMAP_API_HOST}/library/${lib}/${version}/src/${lib}.min.js`;
+                const sourcelink = `${BMAP_API_HOST}/library/${lib}/${version}/src/${lib}.min.js`;
+                st.src = disableZip
+                    ? sourcelink.replace(/\.min(?=\.js)/, "")
+                    : sourcelink;
                 document.head.appendChild(st);
                 libData.install = LOAD_STATE.LOADING;
 
@@ -118,7 +121,7 @@ const BMapGLLibURL = "https://mapopen.bj.bcebos.com/github/BMapGLLib";
 function addBMapGLLibrary(libs: BMapJSAPI.LoadParams["library"]) {
     // 对于已经安装了的lib，可以直接resolve
     const awaitJobs = libs.map((data) => {
-        const { lib } = data;
+        const { lib, disableZip } = data;
         const libData = BMapGLLib.get(lib);
         if (!libData) {
             console.warn(
@@ -136,7 +139,10 @@ function addBMapGLLibrary(libs: BMapJSAPI.LoadParams["library"]) {
                 );
             return new Promise((resolve, rejected) => {
                 const st = document.createElement("script");
-                st.src = `${BMapGLLibURL}/${lib}/src/${lib}.min.js`;
+                const sourcelink = `${BMapGLLibURL}/${lib}/src/${lib}.min.js`;
+                st.src = disableZip
+                    ? sourcelink.replace(/\.min(?=\.js)/, "")
+                    : sourcelink;
                 document.head.appendChild(st);
                 libData.install = LOAD_STATE.LOADING;
 

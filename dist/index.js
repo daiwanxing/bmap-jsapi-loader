@@ -148,7 +148,8 @@ function _loader() {
 function addBMapLibrary(libs) {
   const awaitJobs = libs.map(data => {
     const lib = data.lib,
-      version = data.version;
+      version = data.version,
+      disableZip = data.disableZip;
     const libData = BMapLib.get(lib);
     if (!libData) {
       console.warn("It's seems like you provide uncorrect lib name, please checkout your lib name spell");
@@ -161,7 +162,8 @@ function addBMapLibrary(libs) {
       if (install & LOAD_STATE.LOADING) return new Promise(resolve => appendUnSetteldTask(resolve, "normal"));
       return new Promise((resolve, rejected) => {
         const st = document.createElement("script");
-        st.src = `${BMAP_API_HOST}/library/${lib}/${version}/src/${lib}.min.js`;
+        const sourcelink = `${BMAP_API_HOST}/library/${lib}/${version}/src/${lib}.min.js`;
+        st.src = disableZip ? sourcelink.replace(/\.min(?=\.js)/, "") : sourcelink;
         document.head.appendChild(st);
         libData.install = LOAD_STATE.LOADING;
         st.addEventListener("error", function (e) {
@@ -184,7 +186,8 @@ const BMapGLLibURL = "https://mapopen.bj.bcebos.com/github/BMapGLLib";
 function addBMapGLLibrary(libs) {
   // 对于已经安装了的lib，可以直接resolve
   const awaitJobs = libs.map(data => {
-    const lib = data.lib;
+    const lib = data.lib,
+      disableZip = data.disableZip;
     const libData = BMapGLLib.get(lib);
     if (!libData) {
       console.warn("It's seems like you provide uncorrect GLlib name, please checkout your GLlib name spell");
@@ -197,7 +200,8 @@ function addBMapGLLibrary(libs) {
       if (install & LOAD_STATE.LOADING) return new Promise(resolve => appendUnSetteldTask(resolve, "gl"));
       return new Promise((resolve, rejected) => {
         const st = document.createElement("script");
-        st.src = `${BMapGLLibURL}/${lib}/src/${lib}.min.js`;
+        const sourcelink = `${BMapGLLibURL}/${lib}/src/${lib}.min.js`;
+        st.src = disableZip ? sourcelink.replace(/\.min(?=\.js)/, "") : sourcelink;
         document.head.appendChild(st);
         libData.install = LOAD_STATE.LOADING;
         st.addEventListener("error", function (e) {

@@ -27,12 +27,30 @@ $ npm install bmap-loader --save
 ```js
 import BMapLoader from "bmap-loader";
 
+// 使用 Javascrtip-API 3.0 版本的百度地图
 BMapLoader({
-    v: "1.0",
-    type: "webgl",
+    v: "3.0",
     ak: "填写你的ak密钥",
 }).then(() => {
-    // window.BMapGL
+    // 在 then 函数中 BMap 对象已经挂载到了 window 对象上，所以我们可以安全的访问 BMap 对象的属性和方法
+    const map = new BMap.Map("map");
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
+    map.addControl(
+        new BMap.MapTypeControl({
+            mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP],
+        })
+    );
+    map.enableScrollWheelZoom(true);
+}).catch(error => {
+    alert(error);
+})
+
+// 使用 Javascrtip-API GL 版本的百度地图
+BMapLoader({
+    v: "1.0",
+    type: "webgl"
+    ak: "填写你的ak密钥",
+}).then(() => {
     const map = new BMapGL.Map("map");
     map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11);
     map.addControl(
@@ -53,12 +71,6 @@ BMapLoader({
         v: "1.0",
         type: "webgl",
         ak: "填写你的ak密钥",
-        // 加载百度地图的工具库
-        library: [
-            {
-                lib: "DrawingManager",
-            },
-        ],
     }).then(() => {
         const map = new BMapGL.Map("map");
         map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11);
@@ -93,6 +105,8 @@ BMapLoader({
         {
             lib: "MarkerClusterer",
             version: "1.2",
+            // bmap-loader 默认请求开源库的压缩后的脚本文件，如果需要请求未压缩的源文件，设置 `disableZip: true` 即可。
+            disableZip: true,
         },
     ],
 });
