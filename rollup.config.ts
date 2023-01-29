@@ -3,6 +3,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import babel from "@rollup/plugin-babel";
 import typescript from "@rollup/plugin-typescript";
+import eslint from "@rollup/plugin-eslint";
 
 export default defineConfig({
   input: "./src/index.ts",
@@ -20,8 +21,13 @@ export default defineConfig({
     },
 ],
   plugins: [
+    eslint({
+      include: ["src/**/*.ts"]
+    }),
     typescript({
-        tsconfig: "./tsconfig.json"
+        tsconfig: "./tsconfig.json",
+        throwOnError: true,
+        throwOnWarning: true,
     }),
     resolve(),
     commonjs(),
