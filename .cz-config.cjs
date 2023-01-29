@@ -1,26 +1,21 @@
 module.exports = {
     types: [
-        { value: "feat", name: "feat:     A new feature" },
-        { value: "fix", name: "fix:      A bug fix" },
-        { value: "docs", name: "docs:     Documentation only changes" },
-        {
-            value: "style",
-            name: "style:    Changes that do not affect the meaning of the code\n            (white-space, formatting, missing semi-colons, etc)",
-        },
+        { value: "feat", name: "feat:   ⭐一个新的功能点" },
+        { value: "fix", name: "fix:     🐛一个 bug 修复" },
+        { value: "docs", name: "docs:   📃只对文档改变" },
         {
             value: "refactor",
-            name: "refactor: A code change that neither fixes a bug nor adds a feature",
+            name: "refactor: 🛠️重写某块功能的代码",
         },
         {
             value: "perf",
-            name: "perf:     A code change that improves performance",
+            name: "perf:    🚀提升某个功能点性能",
         },
-        { value: "test", name: "test:     Adding missing tests" },
         {
             value: "chore",
-            name: "chore:    Changes to the build process or auxiliary tools\n            and libraries such as documentation generation",
+            name: "chore:    🪄对非库代码功能的调整",
         },
-        { value: "revert", name: "revert:   Revert to a commit" },
-        { value: "wip", name: "wip:      Work in progress" },
     ],
+    scopes: [{ name: "types" }, { name: null }],
+    allowCustomScopes: false,
 };
