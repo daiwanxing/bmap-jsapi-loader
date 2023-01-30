@@ -1,7 +1,7 @@
 ---
 name: Bug report
 about: Create a report to help me improve
-title: 使用错误
+title: 'Bug:'
 labels: bug
 assignees: daiwanxing
 
