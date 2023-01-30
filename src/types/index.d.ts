@@ -12,31 +12,32 @@ type UtilLibs =
 declare namespace BMapJSAPI {
     export interface LoadParams {
         /**
-         * 百度地图版本
+         * @description 百度地图版本
          */
         v: string;
         /**
-         * 百度地图开发密钥
+         * @description 百度地图开发密钥
          */
         ak: string;
         /**
-         * 目前 type 的值只能是 webgl
+         * @description 当需要加载 GL 版本的百度地图需要指定该参数
+         * @example type: "webgl"
          */
         type?: string;
         /**
-         * 百度地图开源工具库
+         * @description 百度地图开源工具库
          */
-        library: {
+        library?: {
             lib: UtilLibs;
             version?: string;
-            /* 禁止引用压缩后的脚本 */
+            /**
+             * @description 是否禁止压缩后的开源库脚本
+             */
             disableZip: boolean;
         }[];
     }
 }
 declare module "bmap-loader" {
-    const a: BMapJSPI.MyType;
-
     const loader: (params: BMapJSAPI.LoadParams) => Promise<null>;
 
     export default loader;
