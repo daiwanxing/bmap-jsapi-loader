@@ -67,7 +67,7 @@ async function loader(params: BMapJSAPI.LoadParams) {
 }
 
 function addBMapLibrary(libs: BMapJSAPI.LoadParams["library"]) {
-    const awaitJobs = libs.map((data) => {
+    const awaitJobs = libs!.map((data) => {
         const { lib, version, disableZip } = data;
         const libData = BMapLib.get(lib);
         if (!libData) {
@@ -120,7 +120,7 @@ const BMapGLLibURL = "https://mapopen.bj.bcebos.com/github/BMapGLLib";
 
 function addBMapGLLibrary(libs: BMapJSAPI.LoadParams["library"]) {
     // 对于已经安装了的lib，可以直接resolve
-    const awaitJobs = libs.map((data) => {
+    const awaitJobs = libs!.map((data) => {
         const { lib, disableZip } = data;
         const libData = BMapGLLib.get(lib);
         if (!libData) {

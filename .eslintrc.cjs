@@ -9,5 +9,6 @@ module.exports = {
     },
     rules: {
         "@typescript-eslint/no-explicit-any": [2, { ignoreRestArgs: true }],
+        "@typescript-eslint/no-non-null-assertion": "off",
     },
 };

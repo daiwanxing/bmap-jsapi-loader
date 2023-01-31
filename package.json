@@ -1,14 +1,16 @@
 {
     "name": "bmap-loader",
-    "version": "0.0.7",
-    "description": "一个易用的安装百度地图的js加载器, 灵感来源于高德地图官方的amap-jsapi-loader",
+    "version": "0.1.0",
+    "description": "一个小巧的加载百度地图以及地图工具库的 js 插件，A mini js plugin for easy to load Baidu map and Baidu map tools",
     "main": "./dist/index.js",
     "types": "./src/types/index.d.ts",
     "type": "module",
     "scripts": {
         "build": "rollup -c rollup.config.ts --configPlugin typescript",
         "prepare": "husky install",
-        "commit": "cz"
+        "commit": "cz",
+        "test": "vitest index",
+        "coverage": "vitest run"
     },
     "keywords": [
         "bmap",
@@ -45,12 +47,14 @@
         "cz-customizable": "^7.0.0",
         "eslint": "^8.33.0",
         "husky": "^8.0.0",
+        "jsdom": "^21.1.0",
         "lint-staged": "^13.1.0",
         "prettier": "^2.8.3",
         "rollup": "^3.10.1",
         "rollup-plugin-terser": "^7.0.2",
         "tslib": "^2.4.1",
-        "typescript": "^4.9.4"
+        "typescript": "^4.9.4",
+        "vitest": "^0.28.3"
     },
     "config": {
         "commitizen": {
