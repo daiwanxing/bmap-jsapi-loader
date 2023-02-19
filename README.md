@@ -118,8 +118,10 @@ BMapLoader({
 
 提交 issue 前，请尽可能的能提供一个可复现的 demo 链接放在 issue 中。
 
-**最后，如果你觉得这个插件还不错，请给我一个 ⭐ 支持下我。
+## 结尾
+
+如果你觉得这个插件还不错，请给我一个 ⭐ 支持下我。
 
 # License
 
-MIT
+MIT © 2023-PRESENT Wonder Dai
