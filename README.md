@@ -8,32 +8,48 @@
 
 ### 特点
 
-🎨 支持以 UMD 和 ESM 两种模块方式使用
+- 🎨支持以 UMD 和 ESM 两种模块方式使用
+- 🪄为 TypeScript 用户提供完善的类型支持
+- ⚡异步加载百度地图脚本
+- 💌可加载 bmap 3.0 或者 bmap-gl 两个版本
+- 💡支持加载百度地图开源库
+- 📦提供完善的单元测试
 
-🛠️ 由 Typescript 提供类型支持
+# 安装
 
-⚡ 异步加载百度地图脚本
+## 以包管理工具的方式安装
 
-🌱 支持加载百度地图 ^2.0 或者 GL 两个版本
-
-⚙️ 支持加载百度地图开源库
-
-💡 友好的错误提示
-
-✅ 提供完善的单元测试
-
-# 用法
-
-## 以 npm 方式使用
-
+### 使用 NPM:
 ```shell
 $ npm install bmap-loader --save
 ```
 
+### 使用 Yarn:
+
+```shell
+$ yarn add bmap-loader --save
+```
+
+### 使用 PNPM:
+
+```shell
+$ pnpm install bmap-loader --save
+```
+
+## 以 CDN 的方式使用
+
+```js
+<script src="https://cdn.jsdelivr.net/npm/bmap-loader@0.1.0/dist/umd.min.js"></script>
+```
+
+## 快速开始
+
+### 示例
+
 ```js
 import BMapLoader from "bmap-loader";
 
-// 使用 Javascrtip-API 3.0 版本的百度地图
+// 安装 Javascrtip-API 3.0 版本的百度地图
 BMapLoader({
     v: "3.0",
     ak: "填写你的ak密钥",
@@ -51,7 +67,7 @@ BMapLoader({
     alert(error);
 })
 
-// 使用 Javascrtip-API GL 版本的百度地图
+// 安装 Javascrtip-API GL 版本的百度地图
 BMapLoader({
     v: "1.0",
     type: "webgl"
@@ -68,35 +84,13 @@ BMapLoader({
 });
 ```
 
-## 以普通脚本引用外链使用
+## 使用地图工具库
 
-```html
-<script src="../dist/umd.js"></script>
-<script>
-    BMapLoader({
-        v: "1.0",
-        type: "webgl",
-        ak: "填写你的ak密钥",
-    }).then(() => {
-        const map = new BMapGL.Map("map");
-        map.centerAndZoom(new BMapGL.Point(116.404, 39.915), 11);
-        map.addControl(
-            new BMapGL.MapTypeControl({
-                mapTypes: [BMAP_NORMAL_MAP, BMAP_HYBRID_MAP],
-            })
-        );
-        map.enableScrollWheelZoom(true);
-    });
-</script>
-```
+### 百度地图 GL 版本的开源库不需要指定版本，但是安装适用于 bmap 3.0 的开源库需要设置库的版本.
 
-## 安装百度地图工具库
+> [点击链接](https://lbsyun.baidu.com/index.php?title=jspopular3.0/openlibrary)查看 bmap 3.0 的开源库列表
 
-### 百度地图 GL 版本的开源库是不需要指定库的 version，但是 3.0 及以下百度地图版本在使用开源库时需要指定库的版本.
-
-> [点击链接](https://lbsyun.baidu.com/index.php?title=jspopular3.0/openlibrary)查看 3.0 及以下版本的工具库的版本列表
-
-> [点击链接](https://github.com/huiyan-fe/BMapGLLib)查看 GL 版本的可用开源库
+> [点击链接](https://github.com/huiyan-fe/BMapGLLib)查看 bmap GL 版本的开源库列表
 
 ```js
 BMapLoader({
@@ -124,7 +118,7 @@ BMapLoader({
 
 提交 issue 前，请尽可能的能提供一个可复现的 demo 链接放在 issue 中。
 
-**最后，如果你觉得这个插件还不错，还请给我一个 ⭐ 支持下我。o(_￣ ▽ ￣_)ブ**
+**最后，如果你觉得这个插件还不错，请给我一个 ⭐ 支持下我。
 
 # License
 
