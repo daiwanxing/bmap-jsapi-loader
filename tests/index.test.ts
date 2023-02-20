@@ -1,12 +1,23 @@
 import { expect, test } from "vitest";
-import BMapLoader from "../src/index";
+import { loader } from "../src/index";
+import type { LoaderOptions } from "../src";
 
-const AK = "ao989kkieuinjkk123";
+function generateRandomString(length) {
+    const characters =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    const charactersLength = characters.length;
+    const randomChars = Array.from({ length }, () =>
+        characters.charAt(Math.floor(Math.random() * charactersLength))
+    );
+    return randomChars.join("");
+}
+
+const AK = generateRandomString(Math.floor(Math.random() * 11) + 10);
 
 test("Called BMapLoader should return promsie", () => {
     expect(typeof window).not.toBe("undefined");
 
-    const result = BMapLoader({
+    const result = loader({
         v: "3.0",
         ak: AK,
     });
@@ -15,7 +26,7 @@ test("Called BMapLoader should return promsie", () => {
 });
 
 test("accept valid params", () => {
-    const validCase = [
+    const validCase: LoaderOptions[] = [
         {
             v: "3.0",
             ak: AK,
@@ -49,13 +60,14 @@ test("accept valid params", () => {
 
     validCase.forEach((params) => {
         expect(() => {
-            BMapLoader(params);
+            loader(params);
         }).not.toThrow();
     });
 
     const invalidCase = [
         {
             ak: AK,
+            v: "",
         },
         {
             v: AK,
@@ -71,7 +83,9 @@ test("accept valid params", () => {
     ];
 
     invalidCase.forEach((invalid) => {
-        const res = BMapLoader(invalid);
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        const res = loader(invalid);
         expect(res).rejects.toBeDefined();
     });
 });
