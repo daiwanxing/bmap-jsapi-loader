@@ -1,12 +1,68 @@
 import { BMapGLLib, BMapLib, LOAD_STATE } from "./helper";
 
+/**
+ * @ignore
+ */
+declare global {
+    interface Window {
+        __BMapLoadedCallBack: (e: Event) => void;
+    }
+}
+
+/**
+ * @description 百度地图官方工具库
+ */
+export type Libraries =
+    | "DrawingManager"
+    | "AreaRestriction"
+    | "CustomOverlay"
+    | "DistanceTool"
+    | "InfoBox"
+    | "Lushu"
+    | "GeoUtils"
+    | "RichMarker"
+    | "TrackAnimation";
+
+export interface LoaderOptions {
+    /**
+     * @description 百度地图版本
+     */
+    v: string;
+    /**
+     * @description 百度地图开发密钥
+     */
+    ak: string;
+    /**
+     * @description 当需要加载 GL 版本的百度地图需要指定该参数
+     * @example type: "webgl"
+     */
+    type?: string;
+    /**
+     * @description 百度地图开源工具库
+     */
+    library?: {
+        /**
+         * 库的名称
+         */
+        lib: Libraries;
+        /**
+         * 工具库的版本
+         */
+        version?: string;
+        /**
+         * @description 是否禁止压缩后的开源库脚本
+         */
+        disableZip?: boolean;
+    }[];
+}
+
 const BMAP_API_HOST = "https://api.map.baidu.com";
 
 let BMAP_STATE = LOAD_STATE.NOT_LOAD;
 
 const BMAP_GL = "webgl";
 
-async function loader(params: BMapJSAPI.LoadParams) {
+async function loader(params: LoaderOptions) {
     const { ak, v, type, library } = params;
     if (!ak) return Promise.reject("please provide map ak");
     if (typeof ak !== "string")
@@ -66,7 +122,7 @@ async function loader(params: BMapJSAPI.LoadParams) {
     });
 }
 
-function addBMapLibrary(libs: BMapJSAPI.LoadParams["library"]) {
+function addBMapLibrary(libs: LoaderOptions["library"]) {
     const awaitJobs = libs!.map((data) => {
         const { lib, version, disableZip } = data;
         const libData = BMapLib.get(lib);
@@ -118,7 +174,7 @@ function addBMapLibrary(libs: BMapJSAPI.LoadParams["library"]) {
 // GL版的开源工具库放到了百度云的BOS存储上, 参见右侧链接 https://github.com/huiyan-fe/BMapGLLib
 const BMapGLLibURL = "https://mapopen.bj.bcebos.com/github/BMapGLLib";
 
-function addBMapGLLibrary(libs: BMapJSAPI.LoadParams["library"]) {
+function addBMapGLLibrary(libs: LoaderOptions["library"]) {
     // 对于已经安装了的lib，可以直接resolve
     const awaitJobs = libs!.map((data) => {
         const { lib, disableZip } = data;
@@ -198,4 +254,4 @@ function run(taskSets: Tasker[]) {
     taskSets.splice(0);
 }
 
-export { loader as default };
+export { loader };

@@ -1,35 +1,34 @@
 {
-    "name": "bmap-loader",
-    "version": "0.1.0",
-    "description": "一个小巧的加载百度地图以及地图工具库的 js 插件，A mini js plugin for easy to load Baidu map and Baidu map tools",
+    "name": "@wonderdai/bmap-jsapi-loader",
+    "version": "1.0.0",
+    "description": "一个小巧的加载百度地图以及百度地图工具库的 js 插件",
+    "author": "Wonder Dai",
     "main": "./dist/index.js",
-    "types": "./src/types/index.d.ts",
+    "types": "./dist/index.d.ts",
     "type": "module",
     "scripts": {
         "build": "rollup -c rollup.config.ts --configPlugin typescript",
         "prepare": "husky install",
         "commit": "cz",
         "test": "vitest index",
-        "coverage": "vitest run"
+        "coverage": "vitest run",
+        "changelog": "conventional-changelog -p eslint -i CHANGELOG.md -s"
     },
     "keywords": [
         "bmap",
-        "bmap-loader",
+        "bmap-jsapi-loader",
         "bmap-gl",
-        "sdk",
         "百度地图",
         "百度地图jsapi"
     ],
     "files": [
-        "dist",
-        "src"
+        "dist"
     ],
-    "author": "Wonder Dai",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/daiwanxing/bmap-loader/issues"
+        "url": "https://github.com/daiwanxing/bmap-jsapi-loader/issues"
     },
-    "homepage": "https://github.com/daiwanxing/bmap-loader#readme",
+    "homepage": "https://github.com/daiwanxing/bmap-jsapi-loader#readme",
     "devDependencies": {
         "@babel/core": "^7.20.12",
         "@babel/preset-env": "^7.20.2",
@@ -44,6 +43,7 @@
         "@typescript-eslint/eslint-plugin": "^5.49.0",
         "@typescript-eslint/parser": "^5.49.0",
         "commitizen": "^4.3.0",
+        "conventional-changelog-cli": "^2.2.2",
         "cz-customizable": "^7.0.0",
         "eslint": "^8.33.0",
         "husky": "^8.0.0",
@@ -51,6 +51,7 @@
         "lint-staged": "^13.1.0",
         "prettier": "^2.8.3",
         "rollup": "^3.10.1",
+        "rollup-plugin-delete": "^2.0.0",
         "rollup-plugin-terser": "^7.0.2",
         "tslib": "^2.4.1",
         "typescript": "^4.9.4",

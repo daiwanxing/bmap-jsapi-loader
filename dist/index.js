@@ -1,32 +1,26 @@
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
-  try {
-    var info = gen[key](arg);
-    var value = info.value;
-  } catch (error) {
-    reject(error);
-    return;
-  }
-  if (info.done) {
-    resolve(value);
-  } else {
-    Promise.resolve(value).then(_next, _throw);
-  }
-}
-function _asyncToGenerator(fn) {
-  return function () {
-    var self = this,
-      args = arguments;
-    return new Promise(function (resolve, reject) {
-      var gen = fn.apply(self, args);
-      function _next(value) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
-      }
-      function _throw(err) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
-      }
-      _next(undefined);
+/******************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
-  };
 }const LOAD_STATE = {
   NOT_LOAD: 1 << 1,
   LOADING: 1 << 2,
@@ -92,11 +86,8 @@ const BMapLib = new Map([["Heatmap", {
 }]]);const BMAP_API_HOST = "https://api.map.baidu.com";
 let BMAP_STATE = LOAD_STATE.NOT_LOAD;
 const BMAP_GL = "webgl";
-function loader(_x) {
-  return _loader.apply(this, arguments);
-}
-function _loader() {
-  _loader = _asyncToGenerator(function* (params) {
+function loader(params) {
+  return __awaiter(this, void 0, void 0, function* () {
     const ak = params.ak,
       v = params.v,
       type = params.type,
@@ -143,7 +134,6 @@ function _loader() {
       document.head.appendChild(script);
     });
   });
-  return _loader.apply(this, arguments);
 }
 function addBMapLibrary(libs) {
   const awaitJobs = libs.map(data => {
@@ -244,4 +234,4 @@ function appendUnSetteldTask(fn, libType) {
 function run(taskSets) {
   taskSets.forEach(d => d());
   taskSets.splice(0);
-}export{loader as default};
+}export{loader};

@@ -1,21 +1,17 @@
 {
     "compilerOptions": {
-        "target": "ESNext",
-        "module": "ESNext",
+        "target": "ES2015",
+        "module": "ES6",
         "strict": true,
         "skipLibCheck": true,
         "allowJs": false,
         "baseUrl": ".",
         "noImplicitAny": true,
         "moduleResolution": "Node",
-        "lib": [
-            "ESNext",
-            "DOM"
-        ],
-        "typeRoots": ["src/types"]
+        "declaration": true,
+        "declarationDir": "./",
+        "lib": ["ESNext", "DOM"]
     },
-    "include": ["src/**/*", "rollup.config.ts"],
-    "exclude": [
-        "node_modules"
-    ]
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
 }
