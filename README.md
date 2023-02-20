@@ -1,9 +1,5 @@
 # bmap-jsapi-loader
 
-![GitHub](https://img.shields.io/github/license/yinguobing/cnn-facial-landmark)
-![downloads](https://img.shields.io/npm/dt/bmap-loader.svg)
-![version](https://img.shields.io/npm/v/bmap-loader)
-
 `bmap-jsapi-loader` 是一个小巧的易于加载百度地图以及地图开源工具库的插件, `bmap-jsapi-loader` 的灵感来源于 [@googlemaps/js-api-loader](https://www.npmjs.com/package/@googlemaps/js-api-loader)。
 
 ### 特点
@@ -40,7 +36,7 @@ $ pnpm install bmap-jsapi-loader --save
 ## 以 CDN 的方式使用
 
 ```js
-<script src="https://cdn.jsdelivr.net/npm/bmap-jsapi-loader@0.1.0/dist/umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bmap-jsapi-loader@1.0.1/dist/index.umd.js"></script>
 ```
 
 ## 快速开始
