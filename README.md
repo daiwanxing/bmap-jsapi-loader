@@ -1,4 +1,4 @@
-# bmap-loader
+# bmap-jsapi-loader
 
 ![GitHub](https://img.shields.io/github/license/yinguobing/cnn-facial-landmark)
 ![downloads](https://img.shields.io/npm/dt/bmap-loader.svg)
@@ -22,25 +22,25 @@
 ### 使用 NPM:
 
 ```shell
-$ npm install @wonderdai/bmap-jsapi-loader --save
+$ npm install bmap-jsapi-loader --save
 ```
 
 ### 使用 Yarn:
 
 ```shell
-$ yarn add @wonderdai/bmap-jsapi-loader --save
+$ yarn add bmap-jsapi-loader --save
 ```
 
 ### 使用 PNPM:
 
 ```shell
-$ pnpm install @wonderdai/bmap-jsapi-loader --save
+$ pnpm install bmap-jsapi-loader --save
 ```
 
 ## 以 CDN 的方式使用
 
 ```js
-<script src="https://cdn.jsdelivr.net/npm/bmap-loader@0.1.0/dist/umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bmap-jsapi-loader@0.1.0/dist/umd.min.js"></script>
 ```
 
 ## 快速开始
@@ -48,7 +48,7 @@ $ pnpm install @wonderdai/bmap-jsapi-loader --save
 ### 示例
 
 ```js
-import { loader } from "@wonderdai/bmap-jsapi-loader";
+import { loader } from "bmap-jsapi-loader";
 
 // 安装 Javascrtip-API 3.0 版本的百度地图
 loader({
