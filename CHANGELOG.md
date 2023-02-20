@@ -1,3 +1,12 @@
+## [1.0.1](https://github.com/daiwanxing/bmap-loader/compare/1.0.0...1.0.1) (2023-02-20)
+
+
+### chore
+
+* 重命名 package name ([31e772e](https://github.com/daiwanxing/bmap-loader/commit/31e772e245a5bbb9b9b18c9e3a59e0e749b3e328))
+
+
+
 # [1.0.0](https://github.com/daiwanxing/bmap-loader/compare/0.1.0...1.0.0) (2023-02-20)
 
 ### chore

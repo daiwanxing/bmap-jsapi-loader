@@ -1,6 +1,6 @@
 {
     "name": "bmap-jsapi-loader",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "一个小巧的加载百度地图以及百度地图工具库的 js 插件",
     "author": "Wonder Dai",
     "main": "./dist/index.js",
