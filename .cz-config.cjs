@@ -19,6 +19,10 @@ module.exports = {
             value: "type",
             name: "type:    调整包的类型定义",
         },
+        {
+            value: "test",
+            name: "test:    编写测试样例",
+        },
     ],
     scopes: [{ name: "types" }, { name: null }],
     allowCustomScopes: false,

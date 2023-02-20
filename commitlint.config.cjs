@@ -13,6 +13,7 @@ module.exports = {
                 "refactor",
                 "revert",
                 "type",
+                "test",
             ],
         ],
     },
