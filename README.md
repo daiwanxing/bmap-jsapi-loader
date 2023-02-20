@@ -4,36 +4,37 @@
 ![downloads](https://img.shields.io/npm/dt/bmap-loader.svg)
 ![version](https://img.shields.io/npm/v/bmap-loader)
 
-`bmap-loader` 是一个小巧的易于加载百度地图以及地图开源工具库的插件, `bmap-loader` 的灵感来源于 [amap-jsapi-loader](https://www.npmjs.com/package/@amap/amap-jsapi-loader)。
+`bmap-jsapi-loader` 是一个小巧的易于加载百度地图以及地图开源工具库的插件, `bmap-jsapi-loader` 的灵感来源于 [@googlemaps/js-api-loader](https://www.npmjs.com/package/@googlemaps/js-api-loader)。
 
 ### 特点
 
-- 🎨支持以 UMD 和 ESM 两种模块方式使用
-- 🪄为 TypeScript 用户提供完善的类型支持
-- ⚡异步加载百度地图脚本
-- 💌可加载 bmap 3.0 或者 bmap-gl 两个版本
-- 💡支持加载百度地图开源库
-- 📦提供完善的单元测试
+-   🎨 支持以 UMD 和 ESM 两种模块方式使用
+-   🪄 为 TypeScript 用户提供完善的类型支持
+-   ⚡ 异步加载百度地图脚本
+-   💌 可加载 bmap 3.0 或者 bmap-gl 两个版本
+-   💡 支持加载百度地图开源库
+-   📦 提供完善的单元测试
 
 # 安装
 
 ## 以包管理工具的方式安装
 
 ### 使用 NPM:
+
 ```shell
-$ npm install bmap-loader --save
+$ npm install @wonderdai/bmap-jsapi-loader --save
 ```
 
 ### 使用 Yarn:
 
 ```shell
-$ yarn add bmap-loader --save
+$ yarn add @wonderdai/bmap-jsapi-loader --save
 ```
 
 ### 使用 PNPM:
 
 ```shell
-$ pnpm install bmap-loader --save
+$ pnpm install @wonderdai/bmap-jsapi-loader --save
 ```
 
 ## 以 CDN 的方式使用
@@ -47,10 +48,10 @@ $ pnpm install bmap-loader --save
 ### 示例
 
 ```js
-import BMapLoader from "bmap-loader";
+import { loader } from "@wonderdai/bmap-jsapi-loader";
 
 // 安装 Javascrtip-API 3.0 版本的百度地图
-BMapLoader({
+loader({
     v: "3.0",
     ak: "填写你的ak密钥",
 }).then(() => {
@@ -68,7 +69,7 @@ BMapLoader({
 })
 
 // 安装 Javascrtip-API GL 版本的百度地图
-BMapLoader({
+loader({
     v: "1.0",
     type: "webgl"
     ak: "填写你的ak密钥",
