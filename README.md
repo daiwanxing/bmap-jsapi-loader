@@ -1,4 +1,4 @@
-# bmap-jsapi-loader
+# 🗺️ bmap-jsapi-loader
 
 `bmap-jsapi-loader` 是一个小巧的易于加载百度地图以及地图开源工具库的插件, `bmap-jsapi-loader` 的灵感来源于 [@googlemaps/js-api-loader](https://www.npmjs.com/package/@googlemaps/js-api-loader)。
 
